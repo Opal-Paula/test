@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Algorithms</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="data:;base64,iVBORw0KGgo="/>
+        <script src="algorithms.js" async></script>
+    </head>
+    <body>
+        <div>
+            <ol>
+                <li>
+                    Calculeaza media aritmetica a cifrelor de la 3 la 8.<br>
+                    <p>Rezultat: <span id="r1">&minus;</span></p>
+                </li>
+                <li>
+                    Preia de la utilizator doua numere si calculeaza rezultatul 
+                    impartirii primului numar la al doilea. 
+                    Afiseaza cuvantul "Eroare" daca cumva se incearca impartirea la 0.<br>
+                    <div>
+                        <input type="number" id="nr1" value="0"/>
+                        <input type="number" id="nr2" value="0"/>
+                        <button type="button" class="js-division">Show</button>
+                    </div>
+                    <p>Rezultat: <span id="r2">&minus;</span></p>
+                </li>
+                <li>
+                    Preia de la utilizator 4 numere si calculeaza media aritmetica a primelor doua 
+                    si a ultimelor doua si afiseaza textul "Maximul dintre cele doua medii este: " 
+                    si media cea mai mare dintre cele doua. 
+                    <div>
+                        <input type="number" id="nr3" value="0"/>
+                        <input type="number" id="nr4" value="0"/><br>
+                        <input type="number" id="nr5" value="0"/>
+                        <input type="number" id="nr6" value="0"/>
+                        <button type="button" class="js-maxAverage">Show</button>
+                    </div>
+                    <p>Rezultat: <span id="r3">&minus;</span></p>
+                </li>
+                <li>
+                    Preia de la utilizator doua numere intregi, primul reprezinta un numar oarecare iar al doilea un exponent.
+                    Programul trebuie sa calculeze numarul la puterea exponent. 
+                    Programul trebuie sa afiseze cuvantul "Greseala" daca exponentul introdus este negativ.
+                    <div>
+                        <input type="number" id="nr7" value="0"/>
+                        <input type="number" id="nr8" value="0"/>
+                        <button type="button" class="js-exponent">Show</button>
+                    </div>  
+                    Rezultat: <span id="r4">&minus;</span><sup id="r4i"></sup> &equals; <span id="r4ii">&minus;</span>
+                </li>
+                <li>
+                    Preia de la utilizator un numar si calculeaza suma tuturor numerelor de la 0 pana la numarul introdus. 
+                    Daca cumva suma ar depasi numarul 15 programul se opreste si afiseaza suma obtinuta pana atunci.<br>
+                    <button type="button" class="js-sum">Click here to add numbers!</button>
+                    <p>Rezultat: Numerele sunt de la 0 la <span id="r5">&minus;</span> (<span id="r5i">n</span> nr.)</p>
+                    <p>Suma lor este: <span id="r5ii">&minus;</span></p>
+                </li>
+                <li>
+                    Preia de la utilizator numere pana cand utilizatorul introduce cifra 0 si calculeaza media lor aritmetica.
+                    <button type="button" class="js-averageRandom">Click here to add numbers!</button>
+                    <p>Rezultat: Media aritmetica a numerelor <span id="r6">&minus;</span> este <span id="r6i">n</span></p>
+                </li>
+                <li>
+                    Preia de la utilizator numere pana utilizatorul introduce cifra 0 
+                    si afla care este cel mai mare numar dintre cele introduse.
+                    <button type="button" class="js-maxNumber">Click here to add numbers!</button>
+                    <p>Rezultat: Numerele introduse sunt <span id="r7">&minus;</span>&period; Cel mai mare numar este <span id="r7i">n</span></p>
+                </li>
+            </ol>              
+        </div>
+    </body>
+</html>

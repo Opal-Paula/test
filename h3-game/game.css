@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Author     : paula
+*/
+
+.game-body {
+    border: 1px groove;
+    margin: 15% auto; 
+    width: 226px; 
+}
+.result {
+    color: #017bff; 
+    font-weight: bold; 
+    min-height: 35px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.gamers {
+    display: inline-block; 
+    margin: 20px;
+    text-align: center;
+}
+.bkg {
+    background-size: contain;
+    height:50px; 
+    width: 50px; 
+}
+.em {color: #18c718;}
+.btn {
+    display: block; 
+    margin: 5px auto;
+}
+.rock {
+    background-image: url('https://cdn2.iconfinder.com/data/icons/outlined-valuable-items/200/minerals_green-512.png');
+}
+.paper {
+    background-image: url('https://images.onlinelabels.com/images/clip-art/emyller/emyller_papyrus.png');
+}
+.scissors {
+    background-image: url('https://image.flaticon.com/icons/png/128/124/124818.png');
+}
