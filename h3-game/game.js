@@ -21,20 +21,16 @@ function play() {
 //    console.log(output);
     result = '\nComputer wins!';
     var bkgUser = background('user', roshambo[user]);
-    var bkgComputer = background('computer', roshambo[computer]); 
+    var bkgComputer = background('computer', roshambo[computer]);
     if (user === computer) {
         result = 'It\'s a tie!';
         console.log(result);
-        bkgUser, bkgComputer;        
-    } else if ((roshambo[user] === 'Rock') && (roshambo[computer] === 'Paper')) {
+        bkgUser, bkgComputer;
+    } else if (((roshambo[user] === 'Rock') && (roshambo[computer] === 'Paper'))
+            || (roshambo[user] === 'Paper') && (roshambo[computer] === 'Scissors')
+            || ((roshambo[user] === 'Scissors') && (roshambo[computer] === 'Rock'))) {
         //rock vs paper => paper wins
-        console.log(output, result);
-        bkgUser, bkgComputer;
-    } else if ((roshambo[user] === 'Paper') && (roshambo[computer] === 'Scissors')) {
         //paper vs scissors => scissors wins
-        console.log(output, result);
-        bkgUser, bkgComputer;
-    } else if ((roshambo[user] === 'Scissors') && (roshambo[computer] === 'Rock')) {
         //scissors vs rock => rock wins
         console.log(output, result);
         bkgUser, bkgComputer;
