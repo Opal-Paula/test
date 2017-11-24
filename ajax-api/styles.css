@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+
+/*general*/
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+body {background-color: #1a1b1b;}
+/*main*/
+.main-title {
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+.anime-container{padding: 40px;}
+.anime:nth-child(odd) {background-color: #d3deb3;}
+.anime:nth-child(even) {background-color: #b4ccea;}
+article.anime {    
+    border: 2px groove;
+    border-radius: 10px;
+    padding: 10px;
+}
+.em {    
+    font-style: initial;
+    font-weight: bold;
+    padding: 0 10px 0 20px;
+}
+.txt {margin-bottom: 15px;}
+/*scroll to top btn*/
+.scroll-to-top {
+    background-color: #ff4c00;    
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    float: right;
+    font-size: 20px;    
+    padding: 0 15px;    
+}
+.scroll-to-top:hover{background-color: #00d9ff; color: #000;}
