@@ -1,0 +1,84 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+/*general*/
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/*form*/
+.container {margin-bottom: 20px; width: 300px;}
+.comment-box {padding: 10px;}
+.label,
+.title {display: block;}
+.label {margin: 15px 0;}
+.field {padding: 3px 0; width: calc(100% - 4px);}
+.comm.field {height: 100px; width: calc(100% - 2px);}
+.add-comment-btn {float: right; padding: 5px;}
+/*comments*/
+.comment {
+    padding: 10px 5px;
+    margin: 10px 0;
+    position: relative;
+    width: 50%;    
+}
+.comment:nth-child(odd) {background-color: #808080;}
+.comment:nth-child(even) {background-color: #ffc0cb;}
+.user-image {float: left; margin-right: 20px;}
+.user-email {font-weight: bold; padding: 3px 10px;}
+.user-text {
+    font-size: 14px; 
+    margin: 10px 10px 10px 119px; 
+    padding: 3px 5px;
+}
+/*buttons*/
+.bkg {    
+    background-size: contain;    
+    background-repeat: no-repeat;
+    color: transparent;
+    display: block;
+    height: 16px;
+    width: 16px;
+    position: absolute;    
+}
+.bkg:hover {
+    animation: none;
+    box-shadow: 1px 2px 1px #0000ff;    
+}
+.edit-comment-btn {
+    background-image: url('https://vignette.wikia.nocookie.net/pixel-gun-3d/images/0/05/EDIT_ICON.png/revision/latest/scale-to-width-down/50?cb=20170623205849');
+    right: 13px;
+    top: 2px;    
+}
+.submit-edit {
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    background-image: url('http://www.treatz.co.uk/images/icon_check.png');
+    border-radius: 50%;
+    box-shadow: 1px 2px 1px #20710c;
+}
+.edit-msg {
+    background-color: rgba(32, 113, 12, 0.7);
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;   
+}
+.comment:nth-child(odd) .edit {box-shadow: 3px 3px 22px #fff inset;}
+.comment:nth-child(even) .edit {box-shadow: 3px 3px 22px #0000ff inset;}
+.delete-comment-btn {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Deletion_icon.svg/120px-Deletion_icon.svg.png');
+    right: -5px;
+    top: -7px;
+}
+@keyframes pulse {to {box-shadow: 0 0 0 10px rgba(61, 232, 82, 0);}}
