@@ -9,49 +9,18 @@
 (function ($) {
     //https://jikan.me/docs
     var url = 'https://jikan.me/api/';
+    var animeIds = ['5114', '30276', '22319', '3588', '25777', '16498'];
 
     //show all the animes you want from https://myanimelist.net/
-    $.ajax({
-        url: url + '/anime/5114',
-        method: 'GET',
-        cache: true,
-        success: msg,
-        error: msgError
-    });
-    $.ajax({
-        url: url + '/anime/30276',
-        method: 'GET',
-        cache: true,
-        success: msg,
-        error: msgError
-    });
-    $.ajax({
-        url: url + '/anime/22319',
-        method: 'GET',
-        cache: true,
-        success: msg,
-        error: msgError
-    });
-    $.ajax({
-        url: url + '/anime/3588',
-        method: 'GET',
-        cache: true,
-        success: msg,
-        error: msgError
-    });
-    $.ajax({
-        url: url + '/anime/25777',
-        method: 'GET',
-        cache: true,
-        success: msg,
-        error: msgError
-    });
-    $.ajax({
-        url: url + '/anime/16498',
-        method: 'GET',
-        cache: true,
-        success: msg,
-        error: msgError
+    $.each(animeIds, function (i, prop) {
+//        console.log(i, prop);
+        $.ajax({
+            url: url + '/anime/' + prop,
+            method: 'GET',
+            cache: true,
+            success: msg,
+            error: msgError
+        });
     });
 
     /**
@@ -77,7 +46,7 @@
             premiered: $('<p>').addClass('txt').text(data.premiered).prepend('<em class="em">Premiered:</em>')
         };
 //        console.log(animeInfos);
-        
+
         /**
          * Parse through the array of genre
          * @type type
@@ -114,7 +83,7 @@
         $.each(animeInfos, function (i, prop) {
             prop.appendTo(fragment);
         });
-        container.append(fragment);         
+        container.append(fragment);
         //structure added to html
         $('.anime-container').append(container);
     }
