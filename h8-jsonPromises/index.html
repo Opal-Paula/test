@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ajax Posts</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Ajax, api">
+        <meta name="keywords" content="ajax,api,crud, posts">
+        <meta name="author" content="Paula">
+        <link rel="icon" href="data:;base64,iVBORw0KGgo="/>
+        <link rel="icon" href="https://target.scene7.com/is/image/Target/13960915?wid=520&hei=520&fmt=pjpeg"/>
+        <link rel="stylesheet" href="styles.css"/>
+        <script src="jquery-3.2.1.min.js"></script>
+        <script src="posts.js" async></script>
+    </head>
+    <body>
+        <main>            
+            <div class="comment-box">
+                <h1>Comment section</h1>
+                <form action="#" class="clearfix container">                
+                    <label class="label">
+                        <span class="title">Email</span>
+                        <input class="email field" type="email" placeholder="myemail@yahoo.com" />
+                    </label>
+                    <label class="label">
+                        <span class="title">Image</span>
+                        <input class="image field" list="images" type="url" placeholder="https://img.clipartxtras.com/583b8298e71690088074197f7ab407a0_free-clipart-bookworm-penguin-animals-penguin-reading-clipart_780-800.png" />                   
+                        <datalist id="images">
+                            <option value="https://vignette4.wikia.nocookie.net/disney/images/f/f7/Olaf_transparent_pose.png/revision/latest?cb=20160301215157">
+                            <option value="https://vignette.wikia.nocookie.net/angrybirds/images/2/2d/Luca_in_Awe.png/revision/latest?cb=20150319223501">
+                            <option value="https://i.genius.com/c7a06296c025756d21e229fbe421cadc5bfa5c10?url=https%3A%2F%2Fwww.redditstatic.com%2Ficon.png">
+                            <option value="https://openclipart.org/download/243117/1457132963.svg">
+                        </datalist>
+                    </label>
+                    <label class="label">
+                        <span class="title">Comment</span>
+                        <textarea name="comment" class="comm field" placeholder="I can write a comment in here!"></textarea>
+                    </label>
+                    <button type="submit" class="add-comment-btn">Add Comment</button>
+                </form>
+                <h2>User(s) comment(s) section</h2>
+                <div class="comments">
+                    <div class="comment">No comments added.</div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
