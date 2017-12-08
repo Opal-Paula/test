@@ -9,17 +9,13 @@
 (function ($) {
     var url = 'http://localhost:3000/comments';
 
-    //add event to the submit button
+    //add event to the submit button of the form
     $('.add-comment-btn').on('click', addComment);
     /**
      * Add comments
-     * @param {object} e event
      * @returns {Boolean} stop the refresh/navigation on submit
      */
-    function addComment(e) {
-//        e.preventDefault;
-
-        var idUser, email, image, comment, commentValuesAdded;
+    function addComment() {
         //define fields      
         var commentValuesAdded = {
             email: $('.email').val(),
@@ -34,11 +30,9 @@
             var nameOfProperty = prop;
             if (val === '') {
                 commentValuesAdded[prop] = $('.' + prop).attr('placeholder');
-//                console.log('here ', prop, val, commentValuesAdded);
             }
         });
 //        console.log(typeof commentValuesAdded, commentValuesAdded, $.isPlainObject(commentValuesAdded));
-
 
         //submit the form data 
         $.ajax({
@@ -49,12 +43,18 @@
             error: msgError
         });
 
+        /**
+         * Reset the form after submission and show the Comment submitted by the user
+         * @param {type} data
+         * @param {type} status
+         * @param {type} xhr
+         * @returns {undefined}
+         */
         function msg(data, status, xhr) {
 //            console.log(data, status, xhr);
             $('form').trigger("reset");
             displayComments();
         }
-
         return false;
     }
 
@@ -63,11 +63,10 @@
      * @returns {undefined}
      */
     function displayComments() {
-//        console.log('display ', comments);
         //remove comment so it doesn't duplicate
         $('.comment').remove();
 
-        //show the comments submitted
+        //show the comments that were submitted
         $.ajax({
             url: url,
             method: 'GET',
@@ -75,6 +74,13 @@
             error: msgError
         });
 
+        /** 
+         * Build the html for the comments
+         * @param {type} data
+         * @param {type} status
+         * @param {type} xhr
+         * @returns {undefined}
+         */
         function msg(data, status, xhr) {
 //            console.log('gets ', data, status, xhr);
             if (data.length <= 0) {
@@ -83,29 +89,36 @@
                 $('.comments').text('');
             }
             //build foreach comment a container with content
+            var fragment = document.createDocumentFragment();
             $.each(data, function (index, prop) {
-//                console.log('datas', index, prop.email);
+//                console.log('datas', index, prop);
                 var commentContainer = $('<div class="comment clearfix"></div>');
-                var commentImg = $('<img class="user-image" src="' + prop.image + '" alt="image" width="100" height="100" />');
-                var commentEmail = $('<span class="user-email">' + prop.email + '</span>');
-                var commentTxt = $('<p class="user-text">' + prop.comm + '</p>');
-                var commentDeleteBtn = $('<a data-id-delete=' + prop.id + ' class="delete-comment-btn bkg" href="#">x</a>');
-                var commentEditBtn = $('<a data-id-edit=' + prop.id + ' class="edit-comment-btn bkg" href="#">v</a>');
-                commentImg.appendTo(commentContainer);
-                commentEmail.appendTo(commentContainer);
-                commentTxt.appendTo(commentContainer);
-                commentEditBtn.appendTo(commentContainer);
-                commentDeleteBtn.appendTo(commentContainer);
-                commentContainer.appendTo('.comments');
+                var formValues = {
+                    commentImg: $('<img class="user-image" src="' + prop.image + '" alt="image" width="100" height="100" />'),
+                    commentEmail: $('<span class="user-email">' + prop.email + '</span>'),
+                    commentTxt: $('<p class="user-text">' + prop.comm + '</p>'),
+                    commentDeleteBtn: $('<a data-id-delete=' + prop.id + ' class="delete-comment-btn bkg" href="#">x</a>'),
+                    commentEditBtn: $('<a class="edit-comment-btn bkg" href="#">v</a>'),
+                    commentSubmitEditBtn: $('<a data-id-edit=' + prop.id + ' class="submit-edit-btn bkg hide" href="#">v</a>')
+                };
+//                console.log('formValues', formValues);
+                $.each(formValues, function (index, prop) {
+//                    console.log('formValues', index, prop);
+                    prop.appendTo(commentContainer);
+                });
+                commentContainer.appendTo(fragment);
             });
-
-            $('.edit-comment-btn').on('click', editComment);
-            $('.delete-comment-btn').on('click', deleteComment);
+            //append to html
+            $('.comments').append(fragment);
         }
-
     }
     displayComments();
 
+    //trigger events for: edit, edit submission, delete of the comments
+    $('.comments')
+            .on('click', '.edit-comment-btn', editComment)
+            .on('click', '.submit-edit-btn', editCommentSubmit)
+            .on('click', '.delete-comment-btn', deleteComment);
 
     /**
      * Delete the comments submited by user
@@ -121,40 +134,56 @@
             error: msgError
         });
 
+        /**
+         * Removal of the comment was successful
+         * @param {type} data
+         * @param {type} status
+         * @param {type} xhr
+         * @returns {undefined}
+         */
         function msg(data, status, xhr) {
 //            console.log(data, status, xhr);
+            console.log(status + 'ful delete of comment nr.' + dataId);
             displayComments();
         }
     }
 
     /**
-     * Edit the comments submited by user
+     * Activate the editable fields of the comments submited by user: mail and text
+     * Include an informative edit message
      * @returns {undefined}
      */
     function editComment() {
-        $(this).toggleClass('submit-edit');
-        $(this).siblings('.user-email').toggleClass('edit').removeAttr('contenteditable');
-        $(this).siblings('.user-text').toggleClass('edit').removeAttr('contenteditable');
+        $(this)
+                .addClass('hide')
+                .siblings('.submit-edit-btn').removeClass('hide')
+                .siblings('.user-email').addClass('edit')
+                .siblings('.user-text').addClass('edit');
         $('.edit').attr('contenteditable', 'true');
-
         var msgCanEdit = $('<p>').text('You can edit your email and text.').addClass('edit-msg');
         msgCanEdit.appendTo($(this).parent());
-
-        $('.submit-edit').on('click', editCommentSubmit);
     }
 
     /**
-     * After the shown comment is edited, submit
+     * Submit the edited comment(s)
+     * Deactivate the editable fields of the comments submited by user: mail and text
      * @returns {undefined}
      */
     function editCommentSubmit() {
 //        console.log('------------------------------------------');
+        $(this).addClass('hide')
+                .siblings('.edit-comment-btn').removeClass('hide')
+                .siblings('.edit').removeAttr('contenteditable').removeClass('edit')
+                .siblings('.edit-msg').remove();
+
+        //data for ajax
         var dataId = $(this).data("id-edit");
+//        console.log(dataId);
         var editedComments = {
             email: $(this).siblings('.user-email').text(),
             image: $(this).siblings('.user-image').attr('src'),
             comm: $(this).siblings('.user-text').text()
-        };       
+        };
 //        console.log(editedComments);
 
         //comments edited submission
@@ -163,19 +192,43 @@
             method: 'PUT',
             data: editedComments,
             success: msg,
-            error: msgError
+            error: msgErrorSubmit
         });
 
+        /**
+         * Successful message of the edit submision
+         * @param {type} data
+         * @param {type} status
+         * @param {type} xhr
+         * @returns {undefined}
+         */
         function msg(data, status, xhr) {
 //            console.log(data, status, xhr);
-            displayComments();
+            console.log(status + ' edit of commnt nr. ' + dataId);
+        }
+        /**
+         * Error message of the edit submision
+         * @param {type} xhr
+         * @param {type} status
+         * @param {type} error
+         * @returns {undefined}
+         */
+        function msgErrorSubmit(xhr, status, error) {
+//            console.log(xhr, status, error);
+            console.log(xhr.status + ' ' + xhr.statusText);
         }
     }
+    /**
+     * Error message 
+     * @param {type} xhr
+     * @param {type} status
+     * @param {type} error
+     * @returns {undefined}
+     */
     function msgError(xhr, status, error) {
-        console.log(xhr, status, error);
-        var errorMsg = $('body').text('We apologize for the inconvenience. Something went wrong.');
-        //error 500 server : same id is sent, cannot replace it
-//        console.log(errorMsg);
+//        console.log(xhr, status, error);
+        var errorMsg = $('body').text('We apologize for the inconvenience. Something went wrong. ');
+        console.log(xhr.status + ' ' + xhr.statusText);
     }
 
 })(jQuery);
