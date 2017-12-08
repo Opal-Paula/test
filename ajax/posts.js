@@ -204,7 +204,7 @@
          */
         function msg(data, status, xhr) {
 //            console.log(data, status, xhr);
-            console.log(status + ' edit of commnt nr. ' + dataId);
+            console.log(status + 'ful edit of comment nr. ' + dataId);
         }
         /**
          * Error message of the edit submision
