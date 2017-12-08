@@ -13,13 +13,9 @@
     $('.add-comment-btn').on('click', addComment);
     /**
      * Add comments
-     * @param {object} e event
      * @returns {Boolean} stop the refresh/navigation on submit
      */
-    function addComment(e) {
-//        e.preventDefault;
-
-        var idUser, email, image, comment, commentValuesAdded;
+    function addComment() {
         //define fields      
         var commentValuesAdded = {
             email: $('.email').val(),
@@ -34,7 +30,6 @@
             var nameOfProperty = prop;
             if (val === '') {
                 commentValuesAdded[prop] = $('.' + prop).attr('placeholder');
-//                console.log('here ', prop, val, commentValuesAdded);
             }
         });
 
@@ -94,18 +89,21 @@
         var fragment = document.createDocumentFragment();
         //build foreach comment a container with content
         $.each(data, function (index, prop) {
-//                console.log('datas', index, prop.email);
+//                console.log('datas', index, prop);
             var commentContainer = $('<div class="comment clearfix"></div>');
-            var commentImg = $('<img class="user-image" src="' + prop.image + '" alt="image" width="100" height="100" />');
-            var commentEmail = $('<span class="user-email">' + prop.email + '</span>');
-            var commentTxt = $('<p class="user-text">' + prop.comm + '</p>');
-            var commentDeleteBtn = $('<a data-id-delete=' + prop.id + ' class="delete-comment-btn bkg" href="#">x</a>');
-            var commentEditBtn = $('<a data-id-edit=' + prop.id + ' class="edit-comment-btn bkg" href="#">v</a>');
-            commentImg.appendTo(commentContainer);
-            commentEmail.appendTo(commentContainer);
-            commentTxt.appendTo(commentContainer);
-            commentEditBtn.appendTo(commentContainer);
-            commentDeleteBtn.appendTo(commentContainer);
+            var formValues = {
+                commentImg: $('<img class="user-image" src="' + prop.image + '" alt="image" width="100" height="100" />'),
+                commentEmail: $('<span class="user-email">' + prop.email + '</span>'),
+                commentTxt: $('<p class="user-text">' + prop.comm + '</p>'),
+                commentDeleteBtn: $('<a data-id-delete=' + prop.id + ' class="delete-comment-btn bkg" href="#">x</a>'),
+                commentEditBtn: $('<a class="edit-comment-btn bkg" href="#">v</a>'),
+                commentSubmitEditBtn: $('<a data-id-edit=' + prop.id + ' class="submit-edit-btn bkg hide" href="#">v</a>')
+            };
+//                console.log('formValues', formValues);
+            $.each(formValues, function (index, prop) {
+//                    console.log('formValues', index, prop);
+                prop.appendTo(commentContainer);
+            });
             commentContainer.appendTo(fragment);
         });
         $('.comments').append(fragment);
@@ -119,6 +117,7 @@
      */
     function fragmentShow(fragment) {
         $('.edit-comment-btn').on('click', editComment);
+        $('.submit-edit-btn').on('click', editCommentSubmit);
         $('.delete-comment-btn').on('click', deleteComment);
     }
 
@@ -142,23 +141,14 @@
      * @returns {undefined}
      */
     function editComment() {
-        //remove classes from similar elements that are not this or part of the same block
-        $('.submit-edit').removeClass('submit-edit');
-        $('.user-email, .user-text').removeClass('edit');
-        $('.edit-msg').remove();
-        $(this).toggleClass('submit-edit');
-
-        //add/remove option to edit text
-        $(this).siblings('.user-email').toggleClass('edit').removeAttr('contenteditable');
-        $(this).siblings('.user-text').toggleClass('edit').removeAttr('contenteditable');
+        $(this)
+                .addClass('hide')
+                .siblings('.submit-edit-btn').removeClass('hide')
+                .siblings('.user-email').addClass('edit')
+                .siblings('.user-text').addClass('edit');
         $('.edit').attr('contenteditable', 'true');
-
-        //check if edit was clicked
-        if ($(this).hasClass('submit-edit')) {
-            $(this).on('click', editCommentSubmit);
-            var msgCanEdit = $('<p>').text('You can edit your email and text.').addClass('edit-msg');
-            msgCanEdit.appendTo($(this).parent());
-        }
+        var msgCanEdit = $('<p>').text('You can edit your email and text.').addClass('edit-msg');
+        msgCanEdit.appendTo($(this).parent());
     }
 
     /**
@@ -167,6 +157,12 @@
      */
     function editCommentSubmit() {
 //        console.log('------------------------------------------');
+        $(this)
+                .addClass('hide')
+                .siblings('.edit-comment-btn').removeClass('hide')
+                .siblings('.edit').removeAttr('contenteditable').removeClass('edit')
+                .siblings('.edit-msg').remove();
+
         var dataId = $(this).data("id-edit");
         var editedComments = {
             email: $(this).siblings('.user-email').text(),
@@ -182,7 +178,6 @@
             data: editedComments
 
         })
-                .then(getComments)
                 .catch(msgError);
     }
 
@@ -194,8 +189,9 @@
      * @returns {undefined}
      */
     function msgError(xhr, status, error) {
-        console.log(xhr, status, error);
+//        console.log(xhr, status, error);
         var errorMsg = $('body').text('We apologize for the inconvenience. Something went wrong.');
+        console.log(xhr.status + ' ' + xhr.statusText);
     }
 
 })(jQuery);
