@@ -15,6 +15,9 @@ and open the template in the editor.
     display: table;
     clear: both;
 }
+.hide {
+    display: none;
+}
 /*form*/
 .container {margin-bottom: 20px; width: 300px;}
 .comment-box {padding: 10px;}
@@ -44,22 +47,21 @@ and open the template in the editor.
 .bkg {    
     background-size: contain;    
     background-repeat: no-repeat;
-    color: transparent;
-    display: block;
+    color: transparent;    
     height: 16px;
     width: 16px;
     position: absolute;    
+    right: 13px;
+    top: 2px;  
 }
 .bkg:hover {
     animation: none;
     box-shadow: 1px 2px 1px #0000ff;    
 }
 .edit-comment-btn {
-    background-image: url('https://vignette.wikia.nocookie.net/pixel-gun-3d/images/0/05/EDIT_ICON.png/revision/latest/scale-to-width-down/50?cb=20170623205849');
-    right: 13px;
-    top: 2px;    
+    background-image: url('https://vignette.wikia.nocookie.net/pixel-gun-3d/images/0/05/EDIT_ICON.png/revision/latest/scale-to-width-down/50?cb=20170623205849');    
 }
-.submit-edit {
+.submit-edit-btn {
     animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
     background-image: url('http://www.treatz.co.uk/images/icon_check.png');
     border-radius: 50%;
