@@ -1,0 +1,96 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+
+/*general*/
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+body {background-color: #1a1b1b;}
+ul {list-style: none;}
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+/*header*/
+.main-header {
+    background-color: rgba(255, 255, 255, 1);
+    background-image: url(https://vignette.wikia.nocookie.net/hetalia/images/0/07/498119.jpg/revision/latest?cb=20110423090200);
+    background-repeat: no-repeat;
+    background-position: top;
+    padding: 17px 30px;
+    margin: 0 30px;
+    max-width: calc(1290px - 60px);
+}
+.sticky-header {
+    position: fixed;
+    width: 100%;
+}
+.h-list {padding: 0 10px;}
+.h-list:nth-child(even) {
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
+.links {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;    
+    text-transform: capitalize;
+}
+.links:hover,
+.anime-title:hover {
+    color: #00d9ff;
+    text-decoration: underline;
+    text-shadow: 1px 0px 3px #000;
+}
+
+/*main*/
+.main-title {
+    color: #fff;
+    padding: 20px 10px 10px;
+    text-align: center;
+}
+.anime-title {
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.anime-container{padding: 40px;}
+.anime:nth-child(odd) {background-color: #d3deb3;}
+.anime:nth-child(even) {background-color: #b4ccea;}
+.anime {    
+    border: 2px groove;
+    border-radius: 10px;
+    padding: 10px;
+}
+.em {    
+    font-style: initial;
+    font-weight: bold;
+    padding: 0 10px 0 20px;
+}
+.txt {margin-bottom: 15px;}
+.error-pg {
+    color: #ff0000;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize;
+}
+/*scroll to top btn*/
+.scroll-to-top {
+    background-color: #ff4c00;    
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    float: right;
+    font-size: 20px;    
+    padding: 0 15px;    
+}
+.scroll-to-top:hover{background-color: #00d9ff; color: #000;}
