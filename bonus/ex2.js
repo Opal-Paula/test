@@ -11,7 +11,7 @@
  */
 const demoArr = [
     {id: 1, color: 'red', height: 15, width: 20, distance: 10},
-    {id: 2, color: 'green', height: 5, width: 30, distance: 5},
+    {id: 2, color: 'red', height: 5, width: 30, distance: 5},
     {id: 3, color: 'turqoize', height: 7, width: 9, distance: 8},
     {id: 4, color: 'blue', height: 2, width: 3, distance: 3},
     {id: 5, color: 'red', height: 10, width: 10, distance: 2},
@@ -65,6 +65,35 @@ function areaOneHundred(areas) {
 }
 var filtered = areas.filter(areaOneHundred);
 console.log('filtered areas <=100', filtered);
+
+/*
+ 4. Sa se implementeze o functie numita reject, care primeste un array si o functie iterator.
+ Functia iterator primeste cate un element din array ca si parametru si trebuie sa returneze true sau false. 
+ Daca returneaza true, elementul in cauza nu va fi inclus de functia parinte in array-ul rezultat. 
+ Daca returneaza false va fi inclus.
+ */
+function iterator(elem) {
+//    console.log(elem);
+    return elem.height >= 10;
+}
+
+function reject(arr, iteratorCallback) {
+    //de implementat
+    var result = [];
+    for (var prop in arr) {
+        var value = arr[prop];
+//        console.log(iteratorCallback(value));
+        if (!(iteratorCallback(value))) {
+            result.push(value);
+        }
+    }
+
+//    console.log(arr, iteratorCallback, result);
+    return result;
+}
+
+console.log('reject height >= 10', reject(demoArr, iterator)); // sa returneze un array de obiecte cu height < 10
+
 
 /*
  5. Sa se scrie o functie care returneaza elementul cu culoarea crimson
@@ -130,7 +159,6 @@ function totalDistance() {
     var eachElDistances, sumDistances = 0, i;
     eachElDistances = pluck(demoArr, 'distance');
 //    console.log(eachElDistances);
-    sumDistances = 0;
     for (i in eachElDistances) {
         sumDistances += Number(eachElDistances[i]);
 //        console.log('sumDistances ',sumDistances);
@@ -152,8 +180,61 @@ function countColors() {
 //    console.log(el);
     return el;
 }
-console.log('find and count colors', countColors());
+var countColors = countColors();
+console.log('find and count colors', countColors);
 
 /*
  10. Sa se scrie o functie care returneaza un array cu toate elementele care au o coluare unica. Oricare element dupa primul care are o culoare care s-ar repeta nu este inclus in array.
  */
+function uniqueColor(arr) {
+    var result = [], colors = {}, obj;
+    for (obj of arr) {
+        if (!colors[obj.color]) {
+            colors[obj.color] = true;
+            result.push(obj);
+        }
+    }
+    return result;
+}
+console.log('unique color', uniqueColor(demoArr));
+
+/*
+ 11. Sa se scrie o functie care inverseaza doua numere.
+ */
+function destructuring(a, b) {
+    console.log('initial values', a, b);
+    var temp;
+    temp = b;
+    b = a;
+    a = temp;
+    return [a, b];
+}
+console.log('destructured values', destructuring(100, 5));
+
+/*
+ 12. Folosind array-ul de mai jos, vreau sa se obtina o variabila care contine un array de obiecte strcturat astfel:
+ [
+ {subject: 'Chemistry', time: '9AM', teacher: 'Mr. Darnick'},
+ ...
+ ]
+ */
+const classes = [
+    ['Chemistry', '9AM', 'Mr. Darnick'],
+    ['Physics', '10:15AM', 'Mrs. Lithun'],
+    ['Math', '11:30AM', 'Mrs. Vitalis']
+];
+
+function arrayToObject() {
+    var objArrClasses = [];
+    for (var i in classes) {
+        objClasses = {
+            subject: classes[i][0],
+            time: classes[i][1],
+            teacher: classes[i][2]
+        };
+        objArrClasses.push(objClasses);
+    }
+    return objArrClasses;
+}
+
+console.log('array of objects', arrayToObject());
