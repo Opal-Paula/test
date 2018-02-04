@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/*general*/
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;    
+}
+body { color: #2d2d2d; font-family: 'Roboto', sans-serif; }
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.col {
+    border: 1px solid #757474;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;    
+    margin: 20px 5px;    
+    padding: 20px;
+    width: calc(260px - 52px);
+}
+p { margin-bottom: 5px; }
+.img { align-self: center; }
+
+/*main*/
+.main-title { padding: 10px 0; text-align: center; }
+
+.temperatures{ margin: 10px 0; }
+.title{ margin: 5px 0; }
+.weather-btn{ display: none; }    
+.btn {
+    border: 2px groove #dad4d4;   
+    border-radius: 10px 20px;
+    border-style: outset;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 1px;
+    padding: 5px;
+}
+.btn:hover { background-color: #dad4d4; color: #3F51B5; }
+.btn:enabled { color: #2a6736; }
+.active { color: #3F51B5; }
+.metric {
+    float: left;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px;
+    width: 50px;
+}
+.extra { clear: both; margin: 5px; }
+.datas { padding-left: 3px; }
+
+/*footer*/
+.main-footer { margin: 10px; text-align: right; }
+
+
+
