@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400');
+
+/*general*/
+html,
+body {
+    box-sizing: content-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    background-color: #4e385d;
+    color: #efefef;
+}
+ul {
+    list-style-type: circle;
+}
+.ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.display-none,
+.disabled {
+    display: none;
+}
+.flex {
+    display: flex;
+}
+.row {    
+    flex-flow: row wrap; 
+}
+.row-reverse {    
+    flex-flow: row-reverse wrap; 
+}
+.col {
+    flex-flow: column wrap; 
+}
+.margin {
+    margin: 0;
+}
+.summary::-webkit-details-marker {
+    display: none
+}
+.summary:after {
+    background: linear-gradient(135deg, rgba(252,237,238,1) 0%, rgba(251,188,167,1) 50%, rgba(253,168,134,1) 51%, rgba(255,156,122,1) 100%);
+    border-radius: 50%;
+    content: "+";
+    color: #403250;
+    float: left;
+    font-weight: bold;
+    margin: 0 10px;
+    padding: 0;
+    text-align: center;
+    width: 20px;
+}
+.details[open] .summary:after {
+    content: "-";
+}
+
+/*icons*/
+.icon {
+    background-size: contain;
+    background-repeat: no-repeat;  
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+.ic-hobby {
+    background-image: url('https://www.shareicon.net/data/512x512/2015/11/27/678607_earth_512x512.png');
+}
+
+.ic-y {
+    background-image: url('https://cdn0.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/128/social_yahoo_box_lilac.png');
+}
+.ic-in {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Linkedin_icon.svg/768px-Linkedin_icon.svg.png');
+}
+
+.ic-about {
+    background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/197047-200.png');
+}
+.ic-exp {
+    background-image: url('https://cdn4.iconfinder.com/data/icons/miu/24/business-suitcase-glyph-128.png');
+}
+.ic-edu {
+    background-image: url('http://freevector.co/wp-content/uploads/2014/05/49944-graduate-cap.png');
+}
+.ic-skills {
+    background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/225624-200.png');
+}
+.ic-porto {
+    background-image: url('https://cdn.iconscout.com/public/images/icon/premium/png-512/web-design-computer-brush-art-seo-322440383237c340-512x512.png');
+}
+
+.ic-company {
+    background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/509354-200.png');
+}
+.ic-period {
+    background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/50361-200.png');
+}
+.ic-years {
+    background-image: url('https://comps.canstockphoto.com/3-years-experience-vector-clip-art_csp11264015.jpg');
+}
+
+.ic-school {
+    background-image: url('https://cdn0.iconfinder.com/data/icons/buildings-volume-2/72/08-256.png');
+}
+.ic-university {
+    background-image: url('https://cdn1.iconfinder.com/data/icons/education-solid-icons-vol-2/48/074-128.png');
+}
+.ic-university.m {
+    background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/25945-200.png');
+}
+.ic-thesis {
+    background-image: url('https://cdn3.iconfinder.com/data/icons/education/512/Thesis_A-512.png');
+}
+.ic-activity {
+    background-image: url('https://cdn3.iconfinder.com/data/icons/business-man-5/512/travel_business_plane_globe_man-512.png');
+}
+
+.ic-badge {
+    background-image: url('https://www.gurdeepbangar.com/wp-content/uploads/2016/11/magento-certified-frontend.png');
+}
+.ic-en {
+    background-image: url('https://cdn2.iconfinder.com/data/icons/world-flags-1-1/100/Britain-512.png');
+}
+
+/*backgrounds gradient*/
+.blue {
+    background: rgba(237,242,252,1);    
+    background: linear-gradient(135deg, rgba(237,242,252,1) 0%, rgba(167,167,251,1) 50%, rgba(138,134,253,1) 51%, rgba(122,122,255,1) 100%);
+}
+.coral {
+    background: rgba(237,252,250,1);    
+    background: linear-gradient(135deg, rgba(237,252,250,1) 0%, rgba(167,238,251,1) 50%, rgba(134,231,253,1) 51%, rgba(122,235,255,1) 100%);
+}
+.orange {
+    background: rgba(252,237,238,1);
+    background: linear-gradient(135deg, rgba(252,237,238,1) 0%, rgba(251,188,167,1) 50%, rgba(253,168,134,1) 51%, rgba(255,156,122,1) 100%);
+}
+.purple {
+    background: rgba(238,237,252,1);
+    background: linear-gradient(135deg, rgba(238,237,252,1) 0%, rgba(195,167,251,1) 50%, rgba(178,134,253,1) 51%, rgba(167,122,255,1) 100%);
+}
+.yellow {
+    background: rgba(252,245,237,1);    
+    background: linear-gradient(135deg, rgba(252,245,237,1) 0%, rgba(251,233,167,1) 50%, rgba(253,231,134,1) 51%, rgba(255,226,122,1) 100%);
+}
+.green,
+.active-btn,
+.main-menu .link:hover {
+    background: rgba(237,252,237,1);    
+    background: linear-gradient(135deg, rgba(237,252,237,1) 0%, rgba(167,251,192,1) 50%, rgba(134,253,174,1) 51%, rgba(122,255,162,1) 100%);
+}
+
+/*header*/
+.main-header {
+    background-color: #333;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+.logo {
+    border: 8px groove #ff9a6f;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px #000;
+}
+.details {
+    margin: 10px 20px;
+}
+.dts {
+    margin: 0 0 5px;
+}
+.name  {
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.occupation {
+    font-size: 15px;
+}
+
+.location::before {
+    content: '';
+    background-image: url('https://www.spreadshirt.com/image-server/v1/mp/designs/12224267,width=50,height=50/location-icon-blue.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    margin: 0 3px 0 0;
+}
+
+/*navigation*/
+.main-menu {
+    align-items: flex-end;
+    padding: 0;
+}
+.main-menu .icon {
+    display: block;
+    width: 37px;
+    height: 37px;
+}
+.main-menu .link {
+    box-shadow: -9px 6px 10px #2e1b44;
+    border-radius: 10px 0 0 10px;
+    border: 2px solid #333;
+    margin: 10px 0;
+}
+.link-a {
+    display: block;
+    padding: 15px 50px;
+}
+.active-btn.link,
+.main-menu .link:hover {
+    box-shadow: -9px 6px 10px #000;
+    border: 4px double #333;
+}
+
+/*main*/
+.main {
+    margin-bottom: 43px;
+    justify-content: flex-end;
+}
+.container {
+    padding: 0;
+}
+.info {
+    padding: 10px;
+}
+.title {
+    border-bottom: 4px solid #333;
+    margin-bottom: 15px;
+    padding: 0 0 5px 0;
+    text-shadow: 0 2px 4px black;
+}
+.icon-txt {
+    margin-left: 10px;
+}
+.diff {
+    border-bottom: 2px dashed #5f2828;
+}
+.ic-bg {
+    display: inline-block;
+}
+
+.company {
+    margin-right: 20px;
+}
+.summary {
+    margin-bottom: 15px;
+}
+.summary:hover,
+.a-link:hover,
+.portofolio .a-link:hover {
+    color:  rgb(63, 232, 255);
+}
+.columns .location {
+    align-self: center;
+    margin-right: 20px;
+}
+.diploma {
+    margin-top: 5px;
+}
+.diploma .title,
+.activity .title {
+    margin: 0 12px;
+}
+.activity-details {
+    margin-top: 10px;
+}
+.inner-container {
+    min-width: 165px;
+}
+.inner-container .title {
+    font-size: 16px;
+}
+
+.box-container{
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+.know {
+    list-style-type: none;
+    padding: 0;
+}
+.box.title {
+    width: 100%;
+}
+.progress-title {
+    width: 85px;
+    display: inline-block;
+}
+.progress {
+    display: inline-block;
+    width: 5em;
+}
+.progress::-webkit-progress-value {
+    background-color: #ff9a6f;
+}
+.a-link {
+    color: #efefef;
+}
+
+.progress-blue::-webkit-progress-value,
+.blue-meter::-webkit-meter-optimum-value {
+    background: linear-gradient(to bottom, #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%);
+}
+.progress-green::-webkit-progress-value,
+.green-meter::-webkit-meter-optimum-value {
+    background: linear-gradient(to bottom, #68d458 0%,#54cd45 50%,#3dc931 51%,#31a533 100%);
+}
+.progress-orange::-webkit-progress-value,
+.orange-meter::-webkit-meter-optimum-value {  
+    background: linear-gradient(to bottom, #f1b077 0%,#eda45f 50%,#ee9b42 51%,#df9929 100%);
+}
+.meter::-webkit-meter-bar {
+    background: #808080;
+}
+.know.diffs .progress-title {
+    width: 146px;
+}
+.lang .progress-title {
+    width: 70px;
+}
+
+.portofolio .a-link {
+    color: #ff9a6f;
+    text-shadow: 0 2px 4px black;
+}
+.portofolio .summary:after {
+    float: right;
+}
+
+/*footer*/
+.main-footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #403250;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    right: 15px;
+    padding: 3px;
+}
+.year {
+    margin: 0;
+    text-align: center;
+}
+
+
+@media (min-width:645px){
+    .year {
+        width: 90%;
+    }
+}
+@media (max-width:922px) {
+    .summary-img {
+        display: none;
+    }
+}
+@media (max-width:995px) {
+    .link-a {
+        padding: 15px;
+    }
+    .inner-container .details {
+        margin: 10px 10px;
+    }
+}
+@media (max-width:1281px) {
+    .container {
+        width: 70%;
+    }
+}
