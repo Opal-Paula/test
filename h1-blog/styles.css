@@ -1,0 +1,379 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Author     : paula
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/*general*/
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+body:not(a) {cursor: default;}
+.right {float :right;}
+.left {float: left;}
+.overflow-hidden {overflow: hidden;}
+.help {cursor: help;}
+.italic {font-style: italic;}
+.caps-lock {text-transform: uppercase;}
+body{
+    background-attachment: fixed;
+    background-color: #1a2329;
+    background-image: url(http://www.fubiz.net/wp-content/uploads/2011/01/chase_3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;    
+    height: 100vh;    
+}
+.sticky {position: fixed;}
+
+/*header & footer*/
+.main-header {width: 100%;}
+.main-header,
+.main-footer {
+    background-color: rgba(6, 6, 6, 0.7);
+    padding: 5px 20px;
+}
+.logo,
+.menu,
+.menu li {display: block; float: left;}
+.menu li {padding: 10px 20px;}
+.menu li a {
+    color: #9f9fe2;
+    font-size: 16px;    
+    text-decoration: none;    
+    text-shadow: 1px 1px 4px #000;
+}
+.menu li a:hover,
+.active {color: #18c718 !important;}
+
+/*main*/
+.blog-info {padding: 106px 120px 30px;}
+.text,
+.text a {
+    color: #9f9fe2;
+    font-size: 12px;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 4px #000;    
+}
+.text .active {pointer-events: none;}
+.main-container {    
+    background-color: rgb(55, 59, 62);
+    width: 65%;
+}
+.mini-poster {margin: 0 20px 0 0;}
+.poster-title,
+.title-ct {    
+    color: #fcb718;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.info {    
+    color: #9f9fe2;
+    font-size: 14px;
+    width: 50%;
+}
+.blog-info article {margin: 10px 5px;}
+.detailed-info+.detailed-info {
+    border-top: 2px dotted #9f9fe2;
+    padding: 5px 0;
+}
+.em,
+.field-title {
+    color: #cbc4ff;
+    font-weight: 700;    
+}
+.dd {padding-bottom: 5px;}
+.dd a {color: inherit;}
+.books {padding: 0 5px;}
+.bk-ic {
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: transparent;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    text-indent: -999999px;    
+}
+.paperbook {
+    background-image: url('http://www.pngmart.com/files/1/Book-Icon-PNG.png');
+}
+.games {
+    background-image: url('https://vignette2.wikia.nocookie.net/dragonsprophet/images/2/2f/Book_of_advanture.png/revision/latest?cb=20130413022934');
+}
+.ebook {
+    background-image: url('http://www.wordzworth.com/images/icons/ebook-icon.png');
+}
+.comics {
+    background-image: url('http://wfarm3.dataknet.com/static/resources/icons/set99/cd9a9ba2.png');
+}
+.newspapers {
+    background-image: url('http://coitabaleares.es/img/icons/news.png');
+    background-position: center;
+}
+.random-dots::after {
+    content: '\22f0';
+    color: #48f5d6;    
+    font-size: smaller;    
+    font-weight: 900;
+    margin: 0 0 0 3px;
+    vertical-align: super;
+}
+.random-dots:hover::after,
+.color-2 {color: #fcb718;}
+.color-1 {color: #48f5d6;}
+
+/*sidebar*/
+.sidebar {
+    background-color: rgba(222, 206, 94, 0.7);
+    -webkit-box-shadow: 2px 2px 3px #8a4f0a;
+    box-shadow: 2px 2px 3px #8a4f0a;
+    padding: 20px;   
+    width: 25%;  
+}
+.sticky.sidebar {
+    right: 30px;
+    top: 106px;
+}
+#search,
+#search:focus,
+#search:-webkit-autofill:hover {
+    background-color: #cbc4ff;
+    border-color: #cbc4ff;
+}
+#submit {
+    background-color: transparent;
+    background-image: url('http://samahworld.com/images/search-icon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    -webkit-box-shadow: -2px 3px 5px #383c3e;
+    box-shadow: -2px 3px 5px #383c3e;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;   
+    height: 20px;
+    width: 20px;    
+    vertical-align: text-bottom;
+}
+.sidebar .title {text-shadow: 1px 1px 4px #cbc4ff;}
+.colleagues li {list-style-type: circle;}
+.colleagues a {
+    padding: 0 10px;
+    text-decoration: none;    
+}
+.colleagues li:hover {background-color: rgba(6, 6, 6, 0.7);}
+.colleagues li:hover a,
+.colleagues a:active {color: #18c718;}
+
+/*vendor*/
+::-webkit-input-placeholder {color: inherit;}
+:-ms-input-placeholder {color: inherit;}
+::-ms-input-placeholder {color: inherit;}
+::placeholder {color: inherit;}
+::-webkit-scrollbar {width: 10px;}
+::-webkit-scrollbar-thumb {background-color: #9496bd;}
+
+/*contact page*/
+/*contact*/
+.contact {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 73.5vmin;
+    padding: 10px 30px;
+}
+.btn,
+.title-ct {
+    text-align: center;
+    text-shadow: 1px 1px 4px #000;
+}
+#contact {
+    margin: 20px auto;
+    width: 50%;
+}
+.label-container, 
+.field-title {display: block;}
+.label-container {margin: 10px 0;}
+.field,
+.field:focus,
+.btn,
+.btn:focus,
+.required {  
+    background-color: transparent;
+    border-color: #cbc4ff;
+    border-radius: 5px;
+    border-style: double;    
+    border-width: initial;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;    
+    color: #fcb718;
+    padding: 5px;
+    width: 100%;
+}
+.field:focus,
+.btn:focus,
+.btn:hover {
+    border-color: #48f5d6;
+    outline: none;
+}
+.field:not(textarea) {
+    height: 30px;
+    line-height: 30px;
+}
+.field-title {    
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.comment.field {height: 60px;}
+/*.field[name="name"] {text-transform: capitalize;}*/
+.field-title::before,
+.required-txt::before {
+    content: '\2217';    
+    color: #fcb718;    
+    font-size: x-small;
+    margin-right: 1px;
+    vertical-align: super;
+}
+.field::-webkit-input-placeholder {
+    color: #cbc4ff;
+    font-style: italic;    
+}
+.field:-ms-input-placeholder {
+    color: #cbc4ff;
+    font-style: italic;    
+}
+.field::-ms-input-placeholder {    
+    color: #cbc4ff;
+    font-style: italic;
+}
+.field::placeholder {    
+    color: #cbc4ff;
+    font-style: italic;
+}
+.required-txt {    
+    color: #fcb718;
+    margin: 5px 0 35px;
+    text-align: right;
+}
+.btn,
+.btn:focus  {
+    cursor: pointer;
+    font-weight: bold;
+    width: initial;    
+}
+.btn:hover {    
+    background-color: rgba(6, 6, 6, 0.7);
+    border-radius: 10px;
+}
+.reset-btn {margin-left: 5px;}
+
+/*social links*/
+.social {
+    left: 0;
+    top: 40%;
+}
+.social .sidebar {
+    padding: initial;
+    width: inherit;
+}
+.social .title-ct,
+.social .info {
+    position: absolute;
+    right: 999999px;
+}
+.fb {background-image: url('http://www.investors.com/wp-content/themes/ibd/dist/images/social-icons/facebook.png');}
+.pinterest {background-image: url('https://cdn0.iconfinder.com/data/icons/Pinterest/256/Pinterest_Favicon.png');}
+.yahoo {background-image: url('https://cdn3.iconfinder.com/data/icons/social-media-chat-1/512/Yahoo-128.png');}
+.icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: transparent;
+    display: block;    
+    height: 20px;
+    text-indent: -99999px;
+    width: 20px;
+}
+.menu-social {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+}
+.menu-social-li {margin: 5px 2px 10px;}
+.menu-social-li:hover a {
+    border: 1px solid #cbc4ff;
+    border-style: double;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 4px 2px 10px rgba(6, 6, 6, 0.7);
+    box-shadow: 4px 2px 10px rgba(6, 6, 6, 0.7);   
+}
+
+/*contact form validation*/
+.success,
+.success:focus {border-color: #18c718;}
+.required,
+.required.field:-webkit-autofill,
+.required.field:-webkit-autofill:hover {border-color: #ff0000;}
+.error-msg::after {
+    content: attr(title);
+    color: #fcb718;
+}
+.count-msg {display: block;}
+.confirmation-banner {
+    background-color: rgba(24, 199, 24, 0.6);
+    box-shadow: 2px 2px 3px #18c718;
+    padding: 0 10px;
+}
+.confirmation-banner .btn {margin: 7px 0;}
+.confirmation-txt::before {
+    content: '\2713';
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 18px;
+    margin-right: 5px;
+    text-shadow: 1px 1px 4px #000;    
+    vertical-align: bottom;
+}
+.confirmation-txt {
+    color: #fcb718;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px #000;    
+}
+.hide {display: none;}
+.field:-webkit-autofill,
+.field:-webkit-autofill:hover {
+    border-color: #48f5d6;
+    border-style: ridge;
+    -webkit-text-fill-color: #fcb718;
+    -webkit-box-shadow: 0 0 0px 1000px #373b3e inset;
+}
+.success:-webkit-autofill,
+.success:-webkit-autofill:hover {
+    border-color: #18c718;
+}
+.newsletter {margin: 10px 0 30px;}
+.title,
+.radio-st:hover {text-shadow: 1px 1px 4px #000;}
+.txt {color: #cbc4ff;}
+.radio-st {
+    color: #fcb718;
+    cursor: pointer;
+}
+.radio-field {    
+    height: 10px;
+    margin : 0;
+    vertical-align: middle;
+}
+.radio-label {margin: 5px 30px 5px 0;}

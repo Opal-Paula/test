@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Book A Thought</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Contact page of the Book A Thought blog">
+        <meta name="keywords" content="Blog,Book,Thought,Read,Contact">
+        <meta name="author" content="Paula">
+        <link rel="icon" href="data:;base64,iVBORw0KGgo="/>
+        <link rel="icon" href="http://www.webshutter.com/wp-content/uploads/2014/12/creative-brain-2.png"/>
+        <link rel="stylesheet" href="styles.css"/>
+        <script src="contact.js" async></script>
+    </head>
+    <body>
+        <header class="main-header sticky">
+            <a href="index.html" class="logo">
+                <img src="http://www.webshutter.com/wp-content/uploads/2014/12/creative-brain-2.png"
+                     alt="Site's logo"
+                     width="70" />
+            </a>
+            <nav class="menu overflow-hidden">
+                <ul>
+                    <li>
+                        <a href="index.html">Intro</a>
+                    </li>
+                    <li>
+                        <a href="books.html">Books</a>
+                    </li>
+                    <li>
+                        <a href="thoughts.html">Thoughts</a>
+                    </li>
+                    <li>
+                        <a href="goodies.html">Goodies</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section class="overflow-hidden blog-info">
+            <aside class="social sticky">
+                <h3 class="title-ct">Social media</h3>
+                <p class="info">You can also find me on the following:</p>
+                <nav class="sidebar">
+                    <ul class="menu-social">
+                        <li class="menu-social-li">
+                            <a href="https://www.facebook.com/" class="icon fb" title="Facebook Book A Thought" target="_blank">Facebook</a>
+                        </li>
+                        <li class="menu-social-li">
+                            <a href="https://www.pinterest.com/" class="icon pinterest" title="Pinterest Book A Thought" target="_blank">Pinterest</a>
+                        </li>
+                        <li class="menu-social-li">
+                            <a href="mailto:paula.ciocan13@yahoo.com" class="icon yahoo" title="Mail the auhor of Book A Thought" target="_blank">Mail the auhor</a>
+                        </li>
+                    </ul>
+                </nav>    
+            </aside>
+            <main class="main-container contact left">
+                <h1 class="title-ct">Contact</h1>
+                <div class="confirmation-banner overflow-hidden hide">
+                    <p class="left confirmation-txt">Thank you for contacting us&comma;&nbsp;<span class="success-msg">userNameHere</span></p>
+                    <button class="btn right js-close" type="button" name="bannerName">&xotime;</button>
+                </div>
+                <form id="contact" action="#" name="contactForm" method="post" novalidate>
+                    <label class="label-container">
+                        <span class="field-title">Name</span>
+                        <input class="field" type="text" name="name" maxlength="70" placeholder="Jane Doe" required />
+                    </label>      
+                    <label class="label-container">
+                        <span class="field-title">Email</span>
+                        <input class="field" type="email" name="email" maxlength="255" placeholder="myemail@yahoo.com" required />
+                    </label>  
+                    <label class="label-container">
+                        <span class="field-title">Subject</span>
+                        <input class="field" type="text" name="subject" maxlength="50" placeholder="Book A Thought goodies" required />
+                    </label>  
+                    <label class="label-container">
+                        <span class="field-title">Message</span>
+                        <textarea class="field comment" name="message" maxlength="1000" placeholder="Hi, when will you add more goodies? Insert message up to 1000 words/spaces. Have fun!" required></textarea>
+                        <span class="count-msg">0/1000 words</span>
+                    </label>  
+                    <p class="required-txt">This is a required field.</p>
+                    <div class="newsletter">
+                        <h3 class="em title">Newsletter</h3>
+                        <p class="txt">Please select if you want to receive the monthly "Book A Thought" goodies via email.</p>
+                        <label class="radio-label">                            
+                            <input type="radio" class="radio-field" name="newsletter" value="yes" />  
+                            <span class="radio-st">Yes</span>
+                        </label>
+                        <label class="radio-label">                            
+                            <input type="radio" class="radio-field" name="newsletter" value="no" checked />   
+                            <span class="radio-st">No</span>
+                        </label>
+                    </div>                    
+                    <button class="btn" type="submit" name="submit">Submit</button>
+                    <button class="btn reset-btn" type="button" name="resetValues">Reset</button>
+                </form>                
+            </main>
+            <aside class="sticky sidebar">
+                <form id="search-form" action="#nowhere" method="post" name="searchForm">
+                    <input id="search" type="search" name="search" placeholder="Search for goodies ..."/>
+                    <button id="submit" type="submit" title="Search button"></button>
+                </form>
+                <section class="colleagues blog">
+                    <h3 class="title">Bored with reading my blog?<br>
+                        Check other goodies here: </h3>
+                    <ul>
+                        <li>
+                            <a href="">Title of blog by <span class="italic" title="Author name">Andreea</span></a>                        
+                        </li>
+                        <li>
+                            <a href="">Title of blog by <span class="italic" title="Author name">Cristi</span></a>                        
+                        </li>
+                        <li>
+                            <a href="">Title of blog by <span class="italic" title="Author name">Diana</span></a>                        
+                        </li>
+                        <li>
+                            <a href="">Title of blog by <span class="italic" title="Author name">Flavius</span></a>                        
+                        </li>
+                        <li>
+                            <a href="">Title of blog by <span class="italic" title="Author name">Marius</span></a>                        
+                        </li>
+                        <li>
+                            <a href="">Title of blog by <span class="italic" title="Author name">Mihai</span></a>                        
+                        </li>
+                    </ul>
+                </section>
+            </aside>
+        </section>
+        <footer class="main-footer">            
+            <address class="text">
+                <a href="contact.html" title="Go to contact page" class="active">Contact</a>
+            </address>
+            <div class="text">2017</div>
+        </footer>
+    </body>
+</html>
