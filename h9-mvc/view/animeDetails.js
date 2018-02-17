@@ -17,7 +17,7 @@
         }
     }
 //    console.log(getUrlParam("id"));
-    var animeId = [getUrlParam("id")];
+    var animeId = [getUrlParam('id')];
 
     var animeL = new AnimeList(url, animeId);
 //console.log(animeL);

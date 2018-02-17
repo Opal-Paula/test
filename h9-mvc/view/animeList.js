@@ -5,13 +5,13 @@
  */
 
 (function ($) {
-    var url = 'http://api.jikan.me/';
+    var url = 'https://api.jikan.me/';
     var animeIds = ['5114', '30276', '22319', '3588', '25777', '16498'];
     var animeL = new AnimeList(url, animeIds);
 //    console.log(animeL);
     animeL.getData(function (data) {
 //        console.log('je', data, typeof data);
-        if (typeof data == 'undefined') {
+        if (typeof data === 'undefined') {
             var errorMsg = $('<div>').text('We apologize for the inconvenience. Something went wrong.').addClass('error-pg');
             $('.anime-container').append(errorMsg);
         } else {
