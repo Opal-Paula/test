@@ -5,7 +5,7 @@
  */
 
 (function ($) {
-    var url = 'http://api.jikan.me/';
+    var url = 'https://api.jikan.me/';
 
     //util function, will return the url param for the provided key
     function getUrlParam(name) {
