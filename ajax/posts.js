@@ -7,7 +7,7 @@
 'use strict';
 
 (function ($) {
-    var url = 'https://raw.githubusercontent.com/Opal-Paula/test/master/ajax/db.json/comments';
+    var url = 'https://raw.githubusercontent.com/Opal-Paula/test/master/ajax/db.json';
 
     //add event to the submit button of the form
     $('.add-comment-btn').on('click', addComment);
