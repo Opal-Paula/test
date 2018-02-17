@@ -7,7 +7,7 @@
 'use strict';
 class Model {
     constructor() {
-        this.url = 'http://api.wunderground.com/api/5e9d7427a9b8dcfc/forecast/q/RO/Brasov.json';
+        this.url = 'https://api.wunderground.com/api/5e9d7427a9b8dcfc/forecast/q/RO/Brasov.json';
     }
 
     getWeatherForecast() {
