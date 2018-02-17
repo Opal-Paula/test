@@ -7,7 +7,7 @@
 'use strict';
 class Model {
     constructor() {
-        this.url = 'http://api.wunderground.com/api/5e9d7427a9b8dcfc/forecast/q/RO/Brasov.json';
+        this.url = 'https://api.wunderground.com/api/5e9d7427a9b8dcfc/forecast/q/RO/Brasov.json';
     }
     getWeatherForecast() {
         return fetch(this.url, {method: 'GET'}).then(response => response.json());
@@ -53,7 +53,7 @@ class Controller {
     }
     htmlWeather(fDetails) {
         console.log(fDetails);
-        let fragment = document.createDocumentFragment();
+        let fragment = $(document.createDocumentFragment());
         var container = $('<div>').addClass('weather-day');
         for (let i in fDetails) {
             for (let prop in fDetails[i]) {
