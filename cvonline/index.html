@@ -23,6 +23,7 @@ and open the template in the editor.
     </head>
     <body>
         <h1 class="display-none">Online CV</h1>
+        <!--%%%%%%%%%% HEADER %%%%%%%%%%-->
         <header class="main-header flex">
             <a href="index.html" class="logo">                
                 <img 
@@ -36,8 +37,10 @@ and open the template in the editor.
                 <p class="location dts">Brasov</p>
             </div>                 
         </header>
-        <main class="main flex row-reverse">   
+        <main class="main flex row-reverse">  
+            <!--%%%%%%%%%% MENU %%%%%%%%%%-->
             <nav class="main-menu flex col">
+                <h2 class="display-none">Main menu</h2>
                 <ul class="ul">
                     <li class="link blue active-btn">
                         <a href="#about" title="About me" class="link-a">
@@ -66,6 +69,7 @@ and open the template in the editor.
                     </li>
                 </ul>
             </nav>
+            <!--%%%%%%%%%% ABOUT %%%%%%%%%%-->
             <div class="container active" id="about">
                 <article class="info">
                     <h2 class="title">About me</h2>
@@ -81,13 +85,13 @@ and open the template in the editor.
                     </ul> 
 
                     <div class="interests">
-                        <h4 class="title diff">
+                        <h3 class="title diff">
                             <span class="blue ic-bg">
                                 <span class="icon ic-hobby"></span>                                
                             </span>
                             <span class="icon-txt">Interests</span>                            
-                        </h4>
-                        <div class="columns flex">
+                        </h3>
+                        <div class="columns flex row margin">
                             <ul>
                                 <li>Front-end technologies (ReactJS)</li>
                                 <li>Magento 2</li>
@@ -102,13 +106,14 @@ and open the template in the editor.
                     </div>
                 </article>
             </div>
+            <!--%%%%%%%%%% EXPERIENCE %%%%%%%%%%-->
             <div class="container disabled" id="experience">
                 <article class="info">
                     <h2 class="title">Experience</h2>
-                    <h4 class="title diff">
+                    <h3 class="title diff">
                         <span class="icon ic-years"></span>
                         <span class="icon-txt">Magento Front-end Developer</span>
-                    </h4>
+                    </h3>
                     <div class="columns flex row margin">
                         <p class="company">
                             <span class="blue ic-bg">
@@ -116,7 +121,7 @@ and open the template in the editor.
                             </span>                            
                             <span class="icon-txt">Aim 4 Solutions</span>
                         </p>
-                        <p class="period">
+                        <p>
                             <span class="orange ic-bg">
                                 <span class="icon ic-period"></span>                               
                             </span>                            
@@ -155,6 +160,7 @@ and open the template in the editor.
                     </details>                
                 </article>
             </div>
+            <!--%%%%%%%%%% EDUCATION %%%%%%%%%%-->
             <div class="container disabled" id="education">
                 <article class="info">
                     <h2 class="title">Education</h2>    
@@ -168,7 +174,7 @@ and open the template in the editor.
                                 <span class="icon-txt">The Informal School of IT</span>
                             </p>
                             <p class="location">Brasov</p>
-                            <p class="period">
+                            <p>
                                 <span class="orange ic-bg">
                                     <span class="icon ic-period"></span>                               
                                 </span>                            
@@ -197,7 +203,7 @@ and open the template in the editor.
                                 <span class="icon-txt">Lucian Blaga</span>
                             </p>
                             <p class="location">Sibiu</p>
-                            <p class="period">
+                            <p>
                                 <span class="orange ic-bg">
                                     <span class="icon ic-period"></span>                               
                                 </span>                            
@@ -205,8 +211,9 @@ and open the template in the editor.
                             </p>
                         </div> 
                         <p class="diploma">                            
-                            <em class="title">Diploma Thesis:</em>The impact of Weapons Of Mass Destruction proliferation on international
-                            security
+                            <em class="title">Diploma Thesis:</em>
+                            <span>The impact of Weapons Of Mass Destruction proliferation on international
+                                security</span>
                         </p>
                     </details>
                     <details class="details">
@@ -219,7 +226,7 @@ and open the template in the editor.
                                 <span class="icon-txt">Transilvania</span>
                             </p>
                             <p class="location">Brasov</p>
-                            <p class="period">
+                            <p>
                                 <span class="orange ic-bg">
                                     <span class="icon ic-period"></span>                               
                                 </span>                            
@@ -248,7 +255,7 @@ and open the template in the editor.
                                 <span class="icon-txt">Nicolae Iorga</span>
                             </p>
                             <p class="location">Braila</p>
-                            <p class="period">
+                            <p>
                                 <span class="orange ic-bg">
                                     <span class="icon ic-period"></span>                               
                                 </span>                            
@@ -258,10 +265,12 @@ and open the template in the editor.
                     </details>  
                 </article>
             </div>
+            <!--%%%%%%%%%% SKILLS %%%%%%%%%%-->
             <div class="container disabled" id="skills">
                 <article class="info flex row margin">
                     <h2 class="title box">Skills</h2> 
                     <section class="inner-container">
+                        <h3 class="display-none">Knowledge</h3>
                         <details class="details">
                             <summary class="summary">
                                 <span class="title">Knowledge</span>
@@ -316,7 +325,7 @@ and open the template in the editor.
                             <ul class="box know" title="frameworks">
                                 <li>
                                     <span class="progress-title">Unsemantic</span> 
-                                    <progress class="progress progress-green" value="8" max="10" title="Good"></progress>
+                                    <progress class="progress progress-green" value="8" max="10" title="Advanced"></progress>
                                 </li>
                                 <li>
                                     <span class="progress-title">Foundation</span> 
@@ -340,6 +349,7 @@ and open the template in the editor.
                         </details>
                     </section>
                     <section class="inner-container">
+                        <h3 class="display-none">Management</h3>
                         <details class="details">
                             <summary class="summary">
                                 <span class="title">Management</span>
@@ -354,17 +364,17 @@ and open the template in the editor.
                                     <progress class="progress progress-green" value="8" max="10" title="Good"></progress></li>
                                 <li>
                                     <span class="progress-title">Leadership</span> 
-                                    <progress class="progress progress-blue" value="7" max="10" title="Average"></progress>
+                                    <progress class="progress progress-blue" value="7" max="10" title="Medium"></progress>
                                 </li>
                             </ul>
                             <ul class="box know diffs" title="project management">
                                 <li>
                                     <span class="progress-title">Project management</span> 
-                                    <progress class="progress progress-blue" value="7.5" max="10" title="Average"></progress>
+                                    <progress class="progress progress-blue" value="7.5" max="10" title="Medium"></progress>
                                 </li>
                                 <li>
                                     <span class="progress-title">Problem solving</span> 
-                                    <progress class="progress progress-blue" value="7.5" max="10" title="Average"></progress>
+                                    <progress class="progress progress-blue" value="7.5" max="10" title="Medium"></progress>
                                 </li>
                                 <li>
                                     <span class="progress-title">Creativity</span> 
@@ -374,6 +384,7 @@ and open the template in the editor.
                         </details>
                     </section>
                     <section class="inner-container">
+                        <h3 class="display-none">Certifications</h3>
                         <details class="details">
                             <summary class="summary">
                                 <span class="title">Certifications</span>
@@ -393,6 +404,7 @@ and open the template in the editor.
                         </details>
                     </section>
                     <section class="inner-container">
+                        <h3 class="display-none">Languages</h3>
                         <details class="details">
                             <summary class="summary">
                                 <span class="title">Languages</span>
@@ -412,14 +424,15 @@ and open the template in the editor.
                         </details>
                     </section>
                 </article>
-            </div>
+            </div
+            <!--%%%%%%%%%% PORTOFOLIO %%%%%%%%%%-->
             <div class="container disabled" id="portofolio">
                 <article class="info portofolio">
                     <h2 class="title">Portofolio</h2> 
                     <ol>
                         <li>
                             <details class="details">
-                                <summary class="summary">
+                                <summary class="summary" title="More details">
                                     <span>Started with the basics of programming, written in JavaScript</span>
                                     <img 
                                         src="https://hackingbits.github.io/images/blog/algorithms-study/algol.png"
@@ -432,7 +445,7 @@ and open the template in the editor.
                                         <a 
                                             href="https://opal-paula.github.io/test/h-algorithms/index.html"
                                             target="_blank"
-                                            title="Link to the game"
+                                            title="Link to the algorithms"
                                             class="a-link">Link here</a>
                                     </li>
                                     <li>used the conditional statements</li>
@@ -442,7 +455,7 @@ and open the template in the editor.
                         </li>
                         <li>                            
                             <details class="details">
-                                <summary class="summary">
+                                <summary class="summary" title="More details">
                                     <span>Then it took a turn, to playing games</span>
                                     <img 
                                         src="https://cdn2.iconfinder.com/data/icons/metro-ui-dock/128/Games_alt_2.png"
@@ -465,7 +478,7 @@ and open the template in the editor.
                             </details>  
                         </li>
                         <li>         
-                            <details class="details">
+                            <details class="details" title="More details">
                                 <summary class="summary">
                                     <span>From there, we advanced to being bloggers</span>
                                     <img 
@@ -490,7 +503,7 @@ and open the template in the editor.
                         </li>
                         <li>         
                             <details class="details">
-                                <summary class="summary">
+                                <summary class="summary" title="More details">
                                     <span>That also like animes</span>
                                     <img 
                                         src="http://www.pvhc.net/img152/reopghfjathanugthhqr.png"
@@ -508,7 +521,7 @@ and open the template in the editor.
                                     </li>     
                                     <li>this is an anime page, built based on an MVC structure</li>
                                     <li>it contains the Anime List (the homepage) and the Anime Details (when you click on the animes title)</li>
-                                    <li>used the anime API provided by <a href="https://github.com/toddmotto" class="a-link">toddmotto</a> to get the data for the anime list</li>
+                                    <li>used the anime API provided by <a href="https://github.com/toddmotto" class="a-link" target="_blank">toddmotto</a> to get the data for the anime list</li>
                                     <li>used JavaScript prototype</li>
                                     <li>used jQuery for creating elements and populating the DOM</li>
                                     <li>used Flexbox layout</li>
@@ -517,7 +530,7 @@ and open the template in the editor.
                         </li>
                         <li>         
                             <details class="details">
-                                <summary class="summary">
+                                <summary class="summary" title="More details">
                                     <span>And change the forecast at a click away</span>
                                     <img 
                                         src="https://xamarinforms.files.wordpress.com/2015/11/appicon1024-512.png"
@@ -533,7 +546,7 @@ and open the template in the editor.
                                             title="Weather Brasov"
                                             class="a-link">Link here</a>
                                     </li>                                    
-                                    <li>used the weather API provided by <a href="https://github.com/toddmotto" class="a-link">toddmotto</a> to get the data</li>
+                                    <li>used the weather API provided by <a href="https://github.com/toddmotto" class="a-link" target="_blank">toddmotto</a> to get the data</li>
                                     <li>used ECMAScript 2015</li>
                                     <li>built as an MVC structure</li>
                                     <li>used jQuery for creating elements and populating the DOM</li>
@@ -550,7 +563,8 @@ and open the template in the editor.
         </main>
         <footer class="main-footer flex row">
             <p class="year">2018</p>
-            <nav class="links">
+            <nav>
+                <h2 class="display-none">Links footer</h2>
                 <a href="mailto:paula.ciocan13@yahoo.com" class="link" target="_blank" title="Contact me on e-mail">
                     <span class="icon ic-y"></span> 
                 </a>
